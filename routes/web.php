@@ -16,3 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index');
 });
+
+Route::get('/admin', function() {
+    return view('admin.index', [
+        'title' => "Halaman Admin",
+        'page' => "Halaman Admin"
+    ]);
+});

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Spatie\FlareClient\View;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,9 +18,13 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/admin', function() {
+Route::get('/admin', function () {
     return view('admin.index', [
         'title' => "Halaman Admin",
         'page' => "Halaman Admin"
     ]);
+});
+
+Route::get('/login', function () {
+    return view('login');
 });

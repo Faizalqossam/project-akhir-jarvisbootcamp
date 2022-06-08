@@ -36,8 +36,8 @@
                             <label for="floatingPassword">Confirm Password</label>
                         </div>
                         <div class="form-floating col-md-6 mb-3">
-                            <input type="file" class="form-control" id="floatingImage" name="picture">
-                            <label for="floatingImage">Foto</label>
+                            <input type="file" class="form-control" id="floatingCV" name="CV">
+                            <label for="floatingCV">CV</label>
                         </div>
                         <div class="form-floating col-md-6 mb-3">
                             <input type="number" class="form-control" id="floatingNumber" placeholder="628xxxxxxxx">

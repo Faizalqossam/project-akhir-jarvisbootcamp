@@ -21,9 +21,9 @@
                         </div>
                         <hr class="my-4">
                         <div class="d-grid mb-2">
-                            <button class="btn btn-login text-uppercase fw-bold" type="submit">
-                                <i class="fa-solid fa-address-card"></i> Belum punya akun? Klik Disini
-                            </button>
+                            <a class="btn btn-login text-uppercase fw-bold" href="/register"><i
+                                    class="fa-solid fa-address-card"></i> Belum punya akun? Klik
+                                Disini</a>
                         </div>
                     </form>
                 </div>

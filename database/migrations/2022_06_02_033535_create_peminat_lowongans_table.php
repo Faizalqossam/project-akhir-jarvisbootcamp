@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('nama');
             $table->string('kontak');
             $table->string('alamat');
-            $table->foreignId('lowogans_id');
+            $table->foreignId('lowongans_id');
             $table->timestamps();
         });
     }

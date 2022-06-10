@@ -38,7 +38,7 @@
                             <label for="exampleFormControlTextarea1" class="form-label">Deskripsi Pekerjaan</label>
                             <textarea class="form-control" id="exampleFormControlTextarea1" rows="10"></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">Sebarkan</button>
+                        <button type="submit" class="btn btn-outline-primary btn-primary" id="success">Sebarkan</button>
                     </div>
                 </div>
             </div>
@@ -46,9 +46,3 @@
     </section>
     <!-- Form input pekerjaan end -->
 @endsection
-
-@push('script')
-    <script>
-        await ('')
-    </script>
-@endpush

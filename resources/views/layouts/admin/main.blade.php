@@ -104,6 +104,7 @@
     <script src="dist/assets/js/app.js"></script>
 
     <script src="dist/assets/js/pages/dashboard.js"></script>
+    <script src="dist/assets/js/extensions/sweetalert2.js"></script>>
 
     @stack('script')
 

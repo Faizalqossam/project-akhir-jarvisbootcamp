@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Mazer Admin Dashboard</title>
+    <title>{{ $title }}</title>
 
     <link rel="stylesheet" href="dist/assets/css/main/app.css">
     <link rel="stylesheet" href="dist/assets/css/main/app-dark.css">
@@ -62,13 +62,18 @@
                     <ul class="menu">
                         <li class="sidebar-title">Menu</li>
 
-                        <li class="sidebar-item active ">
+                        <li class="sidebar-item">
                             <a href="index.html" class='sidebar-link'>
                                 <i class="bi bi-grid-fill"></i>
                                 <span>Dashboard</span>
                             </a>
                         </li>
-
+                        <li class="sidebar-item">
+                            <a href="input" class="sidebar-link">
+                                <i class="bi bi-file-earmark-medical-fill"></i>
+                                <span>Input Lowongan</span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -80,9 +85,7 @@
                 </a>
             </header>
 
-            <div class="page-heading">
-                <h3>Profile Statistics</h3>
-            </div>
+            @yield('panel')
 
 
             <footer>

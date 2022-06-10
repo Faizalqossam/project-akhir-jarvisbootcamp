@@ -18,7 +18,7 @@ Route::get('/', function () {
 });
 
 Route::get('/admin', function () {
-    return view('admin', [
+    return view('dashboard', [
         'title' => "Halaman Admin",
         'page' => "Halaman Admin"
     ]);
@@ -30,4 +30,11 @@ Route::get('/login', function () {
 
 Route::get('/register', function () {
     return view('register');
+});
+
+
+Route::get('/input', function () {
+    return view('form', [
+        'title' => "Input Form Pekerjaan"
+    ]);
 });

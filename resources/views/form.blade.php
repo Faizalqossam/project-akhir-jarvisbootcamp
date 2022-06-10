@@ -46,3 +46,9 @@
     </section>
     <!-- Form input pekerjaan end -->
 @endsection
+
+@push('script')
+    <script>
+        await ('')
+    </script>
+@endpush

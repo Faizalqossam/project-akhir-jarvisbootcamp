@@ -62,14 +62,14 @@
                     <ul class="menu">
                         <li class="sidebar-title">Menu</li>
 
-                        <li class="sidebar-item">
-                            <a href="index.html" class='sidebar-link'>
+                        <li class="sidebar-item  {{ $title === 'Halaman Admin' ? 'active' : '' }}">
+                            <a href="/admin" class="sidebar-link">
                                 <i class="bi bi-grid-fill"></i>
                                 <span>Dashboard</span>
                             </a>
                         </li>
-                        <li class="sidebar-item">
-                            <a href="input" class="sidebar-link">
+                        <li class="sidebar-item {{ $title === 'Input Form Pekerjaan' ? 'active' : '' }}">
+                            <a href="/input" class="sidebar-link">
                                 <i class="bi bi-file-earmark-medical-fill"></i>
                                 <span>Input Lowongan</span>
                             </a>
@@ -104,6 +104,8 @@
     <script src="dist/assets/js/app.js"></script>
 
     <script src="dist/assets/js/pages/dashboard.js"></script>
+
+    @stack('script')
 
 </body>
 

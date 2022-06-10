@@ -19,8 +19,7 @@ Route::get('/', function () {
 
 Route::get('/admin', function () {
     return view('dashboard', [
-        'title' => "Halaman Admin",
-        'page' => "Halaman Admin"
+        'title' => "Halaman Admin"
     ]);
 });
 

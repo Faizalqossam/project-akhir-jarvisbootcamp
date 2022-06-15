@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Sistem Loker</title>
+    <title>{{ $title }}</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
@@ -26,26 +26,26 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="/">Temukan Pekerjaan</a>
+                        <a class="nav-link {{ $active === 'siloker' ? 'active' : '' }}" href="/">Temukan
+                            Pekerjaan</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/">Review Perusahaan</a>
+                        <a class="nav-link {{ $active === 'loker-category' ? 'active' : '' }}"
+                            href="/category-job">Kategori Pekerjaan</a>
                     </li>
                 </ul>
-                <span>
-                    <ul class="nav nav-fill nav-pills">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="/login">Login</a>
-                        </li>
-                    </ul>
-                </span>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link {{ $active === 'login' ? 'active' : '' }}" href="/login">Login</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>
-    @stack('script')
-    <div class="containeer">
+    <div class="container">
         @yield('content')
     </div>
+    @stack('script')
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
     </script>

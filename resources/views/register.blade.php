@@ -9,6 +9,7 @@
                     {{-- Form Register --}}
                     <form method="post" action="/register" class="row g-2" enctype="multipart/form-data">
                         @csrf
+
                         <div class="form-floating mb-3 col-md-6">
                             <input type="text" name="firstName" class="form-control @error('firtName') is-invalid @enderror"
                                 id="firstName" placeholder="Nama Depan" required value="{{ old('firstName') }}">

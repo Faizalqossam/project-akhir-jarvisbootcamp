@@ -10,4 +10,17 @@
                     Submit</i></button>
         </div>
     </form>
+
+    @foreach ($lokers as $loker)
+        <div class="list-group mt-4">
+            <a href="#" class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">{{ $loker->judul_lowongan }}</h5>
+                    <small class="text-muted">Sampai : {{ $loker->tanggal_akhir }}</small>
+                </div>
+                <p class="mb-1">{{ $loker->email }}</p>
+            </a>
+
+        </div>
+    @endforeach
 @endsection

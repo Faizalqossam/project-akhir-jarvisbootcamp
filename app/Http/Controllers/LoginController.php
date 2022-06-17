@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\Validation\Validator;
 
 class LoginController extends Controller
 {
@@ -17,13 +20,21 @@ class LoginController extends Controller
 
     public function authenticate(Request $request)
     {
-
-        $request->validate([
-            'email' => 'required' | 'email:dns',
-            'password' => 'required'
+        $roles_id = User::where('roles_id', '1');
+        $credentials = $request->validate([
+            'email' => ['required', 'email'],
+            'password' => ['required'],
         ]);
 
-        Alert::success('Sukses', 'Login Berhasil');
-        dd('Login Berhasil');
+        if (Auth::attempt($credentials) == $roles_id) {
+            $request->session()->regenerate();
+            Alert::success('Sukses', 'Login Berhasil');
+
+            return redirect()->intended('admin');
+        }
+
+        return back()->withErrors([
+            'email' => 'Email yang anda masukan tidak terdaftar disini'
+        ])->onlyInput('email');
     }
 }

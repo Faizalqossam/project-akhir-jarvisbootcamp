@@ -32,8 +32,5 @@ class DatabaseSeeder extends Seeder
         Role::create([
             'name' => 'Pencari Kerja'
         ]);
-
-        Mitra::create(['
-        ']);
     }
 }

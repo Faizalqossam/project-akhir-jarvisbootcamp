@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JobsController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\LowonganController;
 use App\Http\Controllers\RegisterController;
 
 /*
@@ -32,8 +33,5 @@ Route::post('/register', [RegisterController::class, 'store']);
 Route::get('/login', [LoginController::class, 'index']);
 Route::post('/login', [LoginController::class, 'authenticate']);
 
-Route::get('/input', function () {
-    return view('form', [
-        'title' => "Input Form Pekerjaan"
-    ]);
-});
+Route::get('/input', [LowonganController::class, 'index']);
+Route::post('/input', [LowonganController::class, 'store']);

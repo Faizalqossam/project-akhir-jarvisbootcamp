@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Role;
-use App\Models\User;
+use App\Models\Mitra;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Support\Facades\Hash;
@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+        \App\Models\User::factory(4)->create();
 
         Role::create([
             'name' => 'Mitra'
@@ -32,6 +33,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Pencari Kerja'
         ]);
 
-        \App\Models\User::factory(4)->create();
+        Mitra::create(['
+        ']);
     }
 }

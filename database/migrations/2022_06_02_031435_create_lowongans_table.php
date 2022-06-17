@@ -15,11 +15,12 @@ return new class extends Migration
     {
         Schema::create('lowongans', function (Blueprint $table) {
             $table->id();
+            // temp
             $table->foreignId('mitras_id');
             $table->char('judul_lowongan');
-            $table->text('deskripsi_pekerjaan');
-            $table->date('tanggal_akhir');
             $table->string('email');
+            $table->date('tanggal_akhir');
+            $table->text('deskripsi_pekerjaan');
             $table->timestamps();
         });
     }

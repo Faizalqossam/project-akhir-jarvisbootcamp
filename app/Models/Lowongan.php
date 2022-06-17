@@ -9,17 +9,21 @@ class Lowongan extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['judul_lowongan','deskripsi_pekerjaan','tanggal_akhir','email'];
+    // protected $fillable = ['judul_lowongan','deskripsi_pekerjaan','tanggal_akhir','email'];
+    protected $guarded = [];
 
-    public function Lowongan_keahlians(){
+    public function Lowongan_keahlians()
+    {
         return $this->hasMany(Lowongan_keahlian::class);
     }
 
-    public function Mitras(){
+    public function Mitras()
+    {
         return $this->belongsTo(Mitra::class);
     }
 
-    public function Peminat_lowongans(){
+    public function Peminat_lowongans()
+    {
         return $this->hasMany(Peminat_lowongan::class);
     }
 }

@@ -25,12 +25,12 @@ Route::get('/admin', function () {
         'title' => "Halaman Admin"
     ]);
 });
-
-Route::get('/login', [LoginController::class, 'index']);
-
+//register route
 Route::get('/register', [RegisterController::class, 'index']);
 Route::post('/register', [RegisterController::class, 'store']);
-
+// login route
+Route::get('/login', [LoginController::class, 'index']);
+Route::post('/login', [LoginController::class, 'authenticate']);
 
 Route::get('/input', function () {
     return view('form', [

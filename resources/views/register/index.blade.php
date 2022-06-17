@@ -9,22 +9,11 @@
                     {{-- Form Register --}}
                     <form method="post" action="/register" class="row g-2" enctype="multipart/form-data">
                         @csrf
-
-                        <div class="form-floating mb-3 col-md-6">
-                            <input type="text" name="firstName" class="form-control @error('firtName') is-invalid @enderror"
-                                id="firstName" placeholder="Nama Depan" required value="{{ old('firstName') }}">
-                            <label for="firstName">Nama depan</label>
-                            @error('firstName')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
-                            @enderror
-                        </div>
-                        <div class="form-floating mb-3 col-md-6">
-                            <input type="text" name="lastName" class="form-control @error('lastName') is-invalid @enderror"
-                                id="lastName" placeholder="Nama Akhir" required value="{{ old('lastName') }}">
-                            <label for="lastName">Nama Akhir</label>
-                            @error('lastName')
+                        <div class="d-grid form-floating mb-3">
+                            <input type="text" class="form-control @error('name') is-invalid @enderror" id="name"
+                                placeholder="Nama Lengkap" name="name" required value="{{ old('name') }}" autofocus>
+                            <label for="name">Nama Lengkap</label>
+                            @error('name')
                                 <div class="invalid-feedback">
                                     {{ $message }}
                                 </div>

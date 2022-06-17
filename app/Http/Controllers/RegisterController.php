@@ -11,7 +11,7 @@ class RegisterController extends Controller
 {
     public function index()
     {
-        return view('register', [
+        return view('register.index', [
             'title' => "Register Page",
             'active' => "register"
         ]);
@@ -20,8 +20,7 @@ class RegisterController extends Controller
     public function store(Request $request)
     {
         $registerData = $request->validate([
-            'firstName' => 'required|max:30|unique:users',
-            'lastName' => 'required|max:70|unique:users',
+            'name' => 'required|max:32',
             'email' => 'required|email:dns|unique:users',
             'password' => 'required|min:6|max:255',
             'number' => 'required|max:13',

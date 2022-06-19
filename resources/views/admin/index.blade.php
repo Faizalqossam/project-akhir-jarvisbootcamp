@@ -1,4 +1,4 @@
-@extends('layouts.admin.main')
+@extends('admin.layout.main')
 
 @section('panel')
     <div class="page-heading">

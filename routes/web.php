@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JobsController;
 use App\Http\Controllers\LoginController;
@@ -21,11 +22,6 @@ Route::get('/', [JobsController::class, 'index']);
 
 Route::get('/category-job', [JobsController::class, 'categoryJob']);
 
-Route::get('/admin', function () {
-    return view('dashboard', [
-        'title' => "Halaman Admin"
-    ]);
-});
 //register route
 Route::get('/register', [RegisterController::class, 'index']);
 Route::post('/register', [RegisterController::class, 'store']);
@@ -33,5 +29,22 @@ Route::post('/register', [RegisterController::class, 'store']);
 Route::get('/login', [LoginController::class, 'index']);
 Route::post('/login', [LoginController::class, 'authenticate']);
 
-Route::get('/input', [LowonganController::class, 'index']);
-Route::post('/input', [LowonganController::class, 'store']);
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+// Route input mitra
+Route::get('/dashboard/input-mitra', [LowonganController::class, 'createMitra'])->name('dashboard.mitra');
+Route::post('/dashboard/input-mitra', [LowonganController::class, 'inputMitra'])->name('dashboard.input.mitra');
+
+//Route input bidang usaha
+Route::get('/dashboard/input-bidang-usaha', [LowonganController::class, 'createBidangUsaha'])->name('dashboard.bidang');
+Route::post('/dashboard/input-bidang-usaha', [LowonganController::class, 'inputBidangUsaha'])->name('dashboard.input.bidang');
+
+
+// Route input sektor usaha
+Route::get('/dashboard/input-sektor-usaha', [LowonganController::class, 'createSektorUsaha'])->name('dashboard.sektor');
+Route::post('/dashboard/input-sektor-usaha', [LowonganController::class, 'inputSektorUsaha'])->name('dashboard.input.sektor');
+
+
+// Route input lowongan, lowongan keahlian dan keahlian
+Route::get('/dashboard/input-lowongan', [LowonganController::class, 'createLowongan'])->name('dashboard.lowongan');
+Route::post('/dashboard/input-lowongan', [LowonganController::class, 'inputLowongan'])->name('dashboard.input.lowongan');

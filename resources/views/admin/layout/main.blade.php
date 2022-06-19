@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ $title }}</title>
 
-    <link rel="stylesheet" href="dist/assets/css/main/app.css">
-    <link rel="stylesheet" href="dist/assets/css/main/app-dark.css">
-    <link rel="shortcut icon" href="dist/assets/images/logo/favicon.svg" type="image/x-icon">
-    <link rel="shortcut icon" href="dist/assets/images/logo/favicon.png" type="image/png">
+    <link rel="stylesheet" href="/dist/assets/css/main/app.css">
+    <link rel="stylesheet" href="/dist/assets/css/main/app-dark.css">
+    <link rel="shortcut icon" href="/dist/assets/images/logo/favicon.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="/dist/assets/images/logo/favicon.png" type="image/png">
 
-    <link rel="stylesheet" href="dist/assets/css/shared/iconly.css">
+    <link rel="stylesheet" href="/dist/assets/css/shared/iconly.css">
 
 </head>
 
@@ -22,7 +22,7 @@
                 <div class="sidebar-header position-relative">
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="logo">
-                            <a href="index.html"><img src="dist/assets/images/logo/logo.svg" alt="Logo"
+                            <a href="index.html"><img src="/dist/assets/images/logo/logo.svg" alt="Logo"
                                     srcset=""></a>
                         </div>
                         <div class="theme-toggle d-flex gap-2  align-items-center mt-2">
@@ -60,24 +60,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="sidebar-menu">
-                    <ul class="menu">
-                        <li class="sidebar-title">Menu</li>
-
-                        <li class="sidebar-item  {{ $title === 'Halaman Admin' ? 'active' : '' }}">
-                            <a href="/admin" class="sidebar-link">
-                                <i class="bi bi-grid-fill"></i>
-                                <span>Dashboard</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item {{ $title === 'Input Form Pekerjaan' ? 'active' : '' }}">
-                            <a href="/input" class="sidebar-link">
-                                <i class="bi bi-file-earmark-medical-fill"></i>
-                                <span>Input Lowongan</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                @include('admin.layout.partials.sidebar')
             </div>
         </div>
         <div id="main">
@@ -103,10 +86,10 @@
             </footer>
         </div>
     </div>
-    <script src="dist/assets/js/app.js"></script>
+    <script src="/dist/assets/js/app.js"></script>
 
-    <script src="dist/assets/js/pages/dashboard.js"></script>
-    <script src="dist/assets/js/extensions/sweetalert2.js"></script>>
+    <script src="/dist/assets/js/pages/dashboard.js"></script>
+    <script src="/dist/assets/js/extensions/sweetalert2.js"></script>>
 
     @stack('script')
 

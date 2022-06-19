@@ -13,7 +13,6 @@ class JobsController extends Controller
         $lowongans = Lowongan::all();
         return view('index', [
             'title' => "Sistem Loker",
-            'active' => "siloker",
             'lokers' => $lowongans
 
         ]);
@@ -23,7 +22,6 @@ class JobsController extends Controller
     {
         return view('categoryJob', [
             'title' => "Kategori Pekerjaan",
-            'active' => "loker-category"
         ]);
     }
 }

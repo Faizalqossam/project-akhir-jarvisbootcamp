@@ -1,4 +1,4 @@
-@extends('layouts.admin.main')
+@extends('admin.layout.main')
 
 @section('panel')
     <section class="section">
@@ -6,7 +6,7 @@
             <div class="card-header">
                 <h4 class="card-title">Form Input Pekerjaan</h4>
             </div>
-            <form action="/input" method="post">
+            <form action="{{ route('dashboard.input.mitra') }}" method="post">
                 @csrf
 
                 <div class="card-body">

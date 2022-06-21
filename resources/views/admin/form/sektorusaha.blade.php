@@ -9,6 +9,13 @@
             </div>
             <form action="{{ route('dashboard.input.sektor') }}" method="post">
                 @csrf
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+
+                        </div>
+                    </div>
+                </div>
             </form>
         </div>
     </section>

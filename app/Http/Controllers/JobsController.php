@@ -10,10 +10,10 @@ class JobsController extends Controller
     public function index()
     {
 
-        $lowongans = Lowongan::all();
+
         return view('index', [
             'title' => "Sistem Loker",
-            'lokers' => $lowongans
+            'lokers' => Lowongan::all()
 
         ]);
     }

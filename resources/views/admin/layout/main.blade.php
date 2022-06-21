@@ -12,6 +12,7 @@
     <link rel="shortcut icon" href="/dist/assets/images/logo/favicon.png" type="image/png">
 
     <link rel="stylesheet" href="/dist/assets/css/shared/iconly.css">
+    <link rel="stylesheet" href="/dist/assets/css/pages/fontawesome.css">
 
 </head>
 
@@ -89,7 +90,8 @@
     <script src="/dist/assets/js/app.js"></script>
 
     <script src="/dist/assets/js/pages/dashboard.js"></script>
-    <script src="/dist/assets/js/extensions/sweetalert2.js"></script>>
+    <script src="/dist/assets/js/extensions/sweetalert2.js"></script>
+
 
     @stack('script')
 

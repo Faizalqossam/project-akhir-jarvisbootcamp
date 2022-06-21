@@ -52,9 +52,9 @@
                         </div>
                         <div class="d-grid form-floating mb-3">
                             <select class="form-select" id="role" name="roles_id" id="role" required>
-                                <option selected>-- Pilih Disini --</option>
-                                <option value="1">Mitra</option>
-                                <option value="2">Pencari Kerja</option>
+                                @foreach ($roles as $role)
+                                    <option value="{{ $role->id }}">{{ $role->name }}</option>
+                                @endforeach
                             </select>
                             <label for="role">Daftar Sebagai</label>
                         </div>

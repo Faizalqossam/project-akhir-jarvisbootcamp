@@ -19,17 +19,19 @@ use App\Http\Controllers\RegisterController;
 */
 
 Route::get('/', [JobsController::class, 'index']);
-
 Route::get('/category-job', [JobsController::class, 'categoryJob']);
 
 //register route
-Route::get('/register', [RegisterController::class, 'index']);
+Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);
+
 // login route
-Route::get('/login', [LoginController::class, 'index']);
+Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
 
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+// Route admin/mitra panel
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');
 
 // Route input mitra
 Route::get('/dashboard/input-mitra', [LowonganController::class, 'createMitra'])->name('dashboard.mitra');

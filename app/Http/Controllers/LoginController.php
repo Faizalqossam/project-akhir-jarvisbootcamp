@@ -30,7 +30,7 @@ class LoginController extends Controller
             $request->session()->regenerate();
             Alert::success('Sukses', 'Login Berhasil');
 
-            return redirect()->intended('admin');
+            return redirect()->intended('dashboard');
         }
 
         return back()->withErrors([

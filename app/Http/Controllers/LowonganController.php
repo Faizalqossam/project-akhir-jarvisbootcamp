@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Bidang_usaha;
 use App\Models\Lowongan;
 use App\Models\Mitra;
+use App\Models\Sektor_usaha;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -18,16 +20,25 @@ class LowonganController extends Controller
 
     public function inputMitra(Request $request)
     {
+        $bidang = $request->validate([
+            'nama' => 'required|min:10|max:50'
+        ]);
+
+        $sektor = $request->validate([
+            'nama_sektor' => 'required|min:10|max:50'
+        ]);
+
         $mitra = $request->validate([
             'nama' => 'required|min:10|max:30',
             'alamat' => 'required|min:20|max:100',
-            'kontak' => 'required|min:10|max:20|unique:Users',
-            'telepon' => 'required|min:10|max:20|unique:Users',
-            'web' => 'required|url'
+            'kontak' => 'required|min:10|max:20',
+            'email' => 'required|email:dns',
+            'telepon' => 'required|min:10|max:20',
+            'web' => 'required'
         ]);
 
         Mitra::create($mitra);
-        return redirect()->route('dashboard.');
+        return redirect()->route('dashboard.input.bidang');
     }
 
     public function createBidangUsaha()
@@ -40,21 +51,14 @@ class LowonganController extends Controller
     public function inputBidangUsaha(Request $request)
     {
 
-        // code
+
+
+        // Bidang_usaha::create($bidang);
+        // Sektor_usaha::create($sektor);
+
+        return redirect()->route('dashboard.input.lowongan');
     }
 
-    public function createSektorUsaha()
-    {
-        return view('admin.form.sektorusaha', [
-            'title' => 'Form Input Sektor Usaha'
-        ]);
-    }
-
-    public function inputSektorUsaha(Request $request)
-    {
-
-        // code
-    }
 
     public function createLowongan()
     {

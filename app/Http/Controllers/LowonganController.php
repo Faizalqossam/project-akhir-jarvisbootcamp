@@ -13,20 +13,18 @@ class LowonganController extends Controller
 {
     public function createMitra()
     {
+        $bidang = Bidang_usaha::all();
+        $sektor = Sektor_usaha::all();
+
         return view('admin.form.mitra', [
-            'title' => "Form Input Mitra"
+            'title' => "Form Input Mitra",
+            'bidangs' => $bidang,
+            'sektors' => $sektor
         ]);
     }
 
     public function inputMitra(Request $request)
     {
-        $bidang = $request->validate([
-            'nama' => 'required|min:10|max:50'
-        ]);
-
-        $sektor = $request->validate([
-            'nama_sektor' => 'required|min:10|max:50'
-        ]);
 
         $mitra = $request->validate([
             'nama' => 'required|min:10|max:30',
@@ -34,7 +32,9 @@ class LowonganController extends Controller
             'kontak' => 'required|min:10|max:20',
             'email' => 'required|email:dns',
             'telepon' => 'required|min:10|max:20',
-            'web' => 'required'
+            'web' => 'required',
+            'bidang_usahas_id' => 'required',
+            'sektor_usahas_id' => 'required'
         ]);
 
         Mitra::create($mitra);

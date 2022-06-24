@@ -12,7 +12,7 @@
 
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-12">
                             <div class="form-group">
                                 <label for="nama">Nama Mitra</label>
                                 <input type="text" name="nama" id="nama"
@@ -23,6 +23,28 @@
                                         {{ $message }}
                                     </div>
                                 @enderror
+                            </div>
+                            <div class="form-group">
+                                <label for="bidang_usahas_id">Bidang Usaha</label>
+                                <select name="bidang_usahas_id" id="bidang_usahas_id" class="form-select choices"
+                                    required>Bidang
+                                    Usaha
+                                    <option selected>---Pilih Bidang Usaha---</option>
+                                    @foreach ($bidangs as $bidang)
+                                        <option value="{{ $bidang->id }}">{{ $bidang->nama }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="sektor_usahas_id">Sektor Usaha</label>
+                                <select name="sektor_usahas_id" id="sektor_usahas_id" class="form-select choices"
+                                    required>Sektor
+                                    Usaha
+                                    <option selected>---Pilih Sektor Usaha---</option>
+                                    @foreach ($sektors as $sektor)
+                                        <option value="{{ $sektor->id }}">{{ $sektor->nama }}</option>
+                                    @endforeach
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label for="alamat">Alamat Perusahaan</label>
@@ -40,9 +62,12 @@
                                 <input type="text" name="kontak" id="kontak"
                                     class="form-control @error('kontak') is-invalid @enderror"
                                     value="{{ old('kontak') }}"required>
+                                @error('kontak')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                             </div>
-                        </div>
-                        <div class="col-md-6">
                             <div class="form-group">
                                 <label for="telepon">Telepon</label>
                                 <input type="number" name="telepon" id="telepon" placeholder="021"

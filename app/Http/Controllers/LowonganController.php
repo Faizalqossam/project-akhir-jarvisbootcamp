@@ -27,11 +27,11 @@ class LowonganController extends Controller
     {
 
         $mitra = $request->validate([
-            'nama' => 'required|min:10|max:30',
-            'alamat' => 'required|min:20|max:100',
-            'kontak' => 'required|min:10|max:20',
+            'nama' => 'required|max:30',
+            'alamat' => 'required|max:100',
+            'kontak' => 'required|max:20',
             'email' => 'required|email:dns',
-            'telepon' => 'required|min:10|max:20',
+            'telepon' => 'required|max:20',
             'web' => 'required',
             'bidang_usahas_id' => 'required',
             'sektor_usahas_id' => 'required'

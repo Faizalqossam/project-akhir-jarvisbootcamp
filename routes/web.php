@@ -37,15 +37,6 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
 Route::get('/dashboard/input-mitra', [LowonganController::class, 'createMitra'])->name('dashboard.mitra');
 Route::post('/dashboard/input-mitra', [LowonganController::class, 'inputMitra'])->name('dashboard.input.mitra');
 
-//Route input bidang usaha
-Route::get('/dashboard/input-bidang-usaha', [LowonganController::class, 'createBidangUsaha'])->name('dashboard.bidang');
-Route::post('/dashboard/input-bidang-usaha', [LowonganController::class, 'inputBidangUsaha'])->name('dashboard.input.bidang');
-
-
-// Route input sektor usaha
-Route::get('/dashboard/input-sektor-usaha', [LowonganController::class, 'createSektorUsaha'])->name('dashboard.sektor');
-Route::post('/dashboard/input-sektor-usaha', [LowonganController::class, 'inputSektorUsaha'])->name('dashboard.input.sektor');
-
 
 // Route input lowongan, lowongan keahlian dan keahlian
 Route::get('/dashboard/input-lowongan', [LowonganController::class, 'createLowongan'])->name('dashboard.lowongan');

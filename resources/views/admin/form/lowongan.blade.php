@@ -6,7 +6,7 @@
             <div class="card-header">
                 <h4 class="card-title">Form Input Pekerjaan</h4>
             </div>
-            <form action="{{ route('dashboard.input.mitra') }}" method="post">
+            <form action="{{ route('dashboard.input.lowongan') }}" method="post">
                 @csrf
 
                 <div class="card-body">
@@ -14,7 +14,10 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="mitras_id">ID Mitra</label>
-                                <input type="text" name="mitras_id" id="mitras_id" class="form-control">
+                                @foreach ($mitras as $mitra)
+                                    <input type="text" name="mitras_id" id="mitras_id" class="form-control"
+                                        value="{{ $mitra->id }}" placeholder="{{ $mitra->nama }}" disabled>
+                                @endforeach
                             </div>
                             <div class="form-group">
                                 <label for="loker">Nama Pekerjaan</label>

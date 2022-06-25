@@ -38,32 +38,17 @@ class LowonganController extends Controller
         ]);
 
         Mitra::create($mitra);
-        return redirect()->route('dashboard.input.bidang');
-    }
-
-    public function createBidangUsaha()
-    {
-        return view('admin.form.bidangusaha', [
-            'title' => 'Form Input Bidang Usaha'
-        ]);
-    }
-
-    public function inputBidangUsaha(Request $request)
-    {
-
-
-
-        // Bidang_usaha::create($bidang);
-        // Sektor_usaha::create($sektor);
-
         return redirect()->route('dashboard.input.lowongan');
     }
 
-
     public function createLowongan()
     {
+
+        //get latest id from Mitra model
+        $mitra = Mitra::latest()->first();
         return view('admin.form.lowongan', [
-            'title' => "Form Input Lowongan"
+            'title' => "Form Input Lowongan",
+            'mitras' => $mitra
         ]);
     }
 

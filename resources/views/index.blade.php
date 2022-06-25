@@ -18,7 +18,8 @@
                     <h5 class="mb-1">{{ $loker->judul_lowongan }}</h5>
                     <small class="text-muted">Sampai : {{ $loker->tanggal_akhir }}</small>
                 </div>
-                <p class="mb-1">{{ $loker->email }}</p>
+                <p class="mb-1">{{ $loker->mitras->nama }}</p>
+                <p class="mb-1">{{ $loker->mitras->alamat }}</p>
             </a>
 
         </div>

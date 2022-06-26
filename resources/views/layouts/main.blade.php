@@ -29,10 +29,6 @@
                         <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="/">Temukan
                             Pekerjaan</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link {{ Request::is('category-job') ? 'active' : '' }}"
-                            href="/category-job">Kategori Pekerjaan</a>
-                    </li>
                 </ul>
                 <ul class="navbar-nav">
                     <li class="nav-item">

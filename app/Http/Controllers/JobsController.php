@@ -12,10 +12,9 @@ class JobsController extends Controller
     public function index()
     {
 
-
         return view('index', [
             'title' => "Sistem Loker",
-            'lokers' => Lowongan::all()
+            'lokers' => Lowongan::latest()->filter()->get()
 
         ]);
     }

@@ -6,6 +6,7 @@ use App\Http\Controllers\JobsController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LowonganController;
 use App\Http\Controllers\RegisterController;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,6 +37,9 @@ Route::post('/login', [LoginController::class, 'authenticate']);
 
 // Route admin/mitra panel
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');
+Route::get('/dashboard/list-loker', [DashboardController::class, 'list'])->name('dashboard.list');
+Route::get('/dashboard/list-loker/delete/{id}', [DashboardController::class, 'destroyLowongan'])->name('dashboard.list.delete');
+
 
 // Route input mitra
 Route::get('/dashboard/input-mitra', [LowonganController::class, 'createMitra'])->name('dashboard.mitra');

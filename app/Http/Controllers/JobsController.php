@@ -19,13 +19,6 @@ class JobsController extends Controller
         ]);
     }
 
-    public function categoryJob()
-    {
-        return view('categoryJob', [
-            'title' => "Kategori Pekerjaan",
-        ]);
-    }
-
     public function create()
     {
         return view(

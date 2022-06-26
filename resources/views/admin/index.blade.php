@@ -2,7 +2,25 @@
 
 @section('panel')
     <div class="page-heading">
-        <h3>Peminat Lowongan</h3>
+        <div class="page-title">
+            <div class="row">
+                <div class="col-12 col-md-6 order-md-1 order-last">
+                    <h3>Peminat Lowongan</h3>
+                </div>
+                <div class="col-12 col-md-6 order-md-2 order-first">
+                    <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <form action="/logout" method="post">
+                                    @csrf
+                                    <button type="submit">Logout</button>
+                                </form>
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="card">
         <div class="card-header">
@@ -28,11 +46,9 @@
                                 <td>{{ $peminat->alamat }}</td>
                                 <td>{{ $peminat->lowongans->judul_lowongan }}</td>
                                 <td>
-                                    <a href=""><span class="badge bg-success">View</span></a>
-                                    <a href=""><span class="badge bg-warning">Update</span>
-                                        <a href="/dashboard/delete/{{ $peminat->id }}"
-                                            onclick="return confirm('Apakah anda ingin menghapus pelamar ini?')"><span
-                                                class="badge bg-danger">Delete</span></a>
+                                    <a href="/dashboard/delete/{{ $peminat->id }}"
+                                        onclick="return confirm('Apakah anda ingin menghapus pelamar ini?')"><span
+                                            class="badge bg-danger">Delete</span></a>
                                 </td>
                             </tr>
                         @endforeach

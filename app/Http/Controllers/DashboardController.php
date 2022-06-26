@@ -16,17 +16,9 @@ class DashboardController extends Controller
         ]);
     }
 
-    public function list()
+    public function destroy($id)
     {
-        return view('admin.list', [
-            'title' => "Halaman Admin",
-            'lowongans' => Lowongan::all()
-        ]);
-    }
-
-    public function destroyLowongan($id)
-    {
-        Lowongan::destroy($id);
-        return redirect()->route('dashboard.list');
+        Peminat_lowongan::destroy($id);
+        return redirect('/dashboard');
     }
 }

@@ -37,8 +37,13 @@ Route::post('/login', [LoginController::class, 'authenticate']);
 
 // Route admin/mitra panel
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');
-Route::get('/dashboard/list-loker', [DashboardController::class, 'list'])->name('dashboard.list');
-Route::get('/dashboard/list-loker/delete/{id}', [DashboardController::class, 'destroyLowongan'])->name('dashboard.list.delete');
+Route::get('/dashboard/delete/{id}', [DashboardController::class, 'destroy'])->name('dashboard.delete');
+
+// Route list loker
+Route::get('/dashboard/list-loker', [LowonganController::class, 'index'])->name('dashboard.list');
+Route::get('/dashboard/list-loker/edit/{id}', [LowonganController::class, 'editLowongan']);
+Route::get('/dashboard/list-loker/delete/{id}', [LowonganController::class, 'destroyLowongan'])->name('dashboard.list.delete');
+Route::put('/dashboard/list-loker/update/{id}', [LowonganController::class, 'updateLowongan']);
 
 
 // Route input mitra

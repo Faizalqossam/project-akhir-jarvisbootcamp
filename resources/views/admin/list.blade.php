@@ -27,7 +27,8 @@
                                 <td>{{ $lowongan->tanggal_akhir }}</td>
                                 <td>
                                     <a href=""><span class="badge bg-success">View</span></a>
-                                    <a href=""><span class="badge bg-warning">Update</span>
+                                    <a href="/dashboard/list-loker/edit/{{ $lowongan->id }}"><span
+                                            class="badge bg-warning">Update</span>
                                         <a href="/dashboard/list-loker/delete/{{ $lowongan->id }}"
                                             onclick="return confirm('Apakah anda ingin menghapus lowongan ini?')"><span
                                                 class="badge bg-danger">Delete</span></a>

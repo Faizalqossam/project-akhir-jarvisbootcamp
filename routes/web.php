@@ -21,6 +21,10 @@ use App\Http\Controllers\RegisterController;
 Route::get('/', [JobsController::class, 'index']);
 Route::get('/category-job', [JobsController::class, 'categoryJob']);
 
+// lamar pekerjaan route
+Route::get('/lamar-pekerjaan', [JobsController::class, 'create'])->name('apply.work')->middleware('auth');
+Route::post('/lamar-pekerjaan', [JobsController::class, 'store'])->name('apply.work.input');
+
 //register route
 Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);

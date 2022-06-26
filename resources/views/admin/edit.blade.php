@@ -15,12 +15,8 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="mitras_id">ID Mitra</label>
-                                <select name="mitras_id" id="mitras_id" class="form-select choices" required>Nama Mitra
-                                    <option selected>--Pilih Mitra---</option>
-                                    @foreach ($mitras as $mitra)
-                                        <option value="{{ $mitra->id }}">{{ $mitra->nama }}</option>
-                                    @endforeach
-                                </select>
+                                <input type="text" name="mitras_id" id="mitras_id" class="form-control"
+                                    value="{{ $mitras->id }}" readonly>
                             </div>
                             <div class="form-group">
                                 <label for="loker">Nama Pekerjaan</label>

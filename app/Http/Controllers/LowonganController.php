@@ -21,10 +21,9 @@ class LowonganController extends Controller
 
     public  function editLowongan($id)
     {
-        $lowongan = Lowongan::find($id);
         return view('admin.edit', [
             'title' => 'Edit Lowongan',
-            'mitras' => Mitra::all(),
+            'mitras' => Mitra::latest()->first(),
             'lowongans' => Lowongan::find($id)
         ]);
     }
@@ -81,7 +80,10 @@ class LowonganController extends Controller
     {
 
         //get latest id from Mitra model
-        $mitra = Mitra::all();
+        $mitra = Mitra::latest()->first();
+
+        // return dd($mitra);
+
         return view('admin.form.lowongan', [
             'title' => "Form Input Lowongan",
             'mitras' => $mitra

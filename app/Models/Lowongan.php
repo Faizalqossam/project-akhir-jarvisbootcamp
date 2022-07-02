@@ -12,10 +12,13 @@ class Lowongan extends Model
     // protected $fillable = ['judul_lowongan','deskripsi_pekerjaan','tanggal_akhir','email'];
     protected $guarded = [];
 
+
+
     public function scopeFilter($query)
     {
         if (request('search')) {
-            return $query->where('judul_lowongan', 'like', '%' . request('search') . '%');
+            return $query->where('judul_lowongan', 'like', '%' . request('search') . '%')
+            ->orWhere('email', 'like', '%' . request('search') . '%');
         }
     }
 

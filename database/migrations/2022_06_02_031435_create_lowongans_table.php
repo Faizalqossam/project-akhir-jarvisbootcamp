@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('email');
             $table->date('tanggal_akhir');
             $table->text('deskripsi_pekerjaan');
+            $table->text('salary');
             $table->timestamps();
         });
     }

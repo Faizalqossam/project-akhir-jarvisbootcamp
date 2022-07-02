@@ -25,6 +25,12 @@
 
                             </div>
                             <div class="form-group">
+                                <label for="salary">Salary</label>
+                                <input type="text" name="salary" class="form-control" id="salary"
+                                    value="{{ $lowongans->salary }}">
+
+                            </div>
+                            <div class="form-group">
                                 <label for="email">Email</label>
                                 <input type="email" name="email" id="email" class="form-control"
                                     value="{{ $lowongans->email }}">

@@ -30,6 +30,18 @@
                                 @enderror
                             </div>
                             <div class="form-group">
+                                <label for="salary">Salary</label>
+                                <input type="text" name="salary"
+                                    class="form-control @error('salary') is-invalid @enderror"
+                                    value="{{ old('salary') }}" id="salary"
+                                    placeholder="Masukan Jumlah Gaji">
+                                @error('salary')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+                            <div class="form-group">
                                 <label for="email">Email</label>
                                 <input type="email" name="email"
                                     class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}"

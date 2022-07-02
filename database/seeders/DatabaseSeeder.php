@@ -158,21 +158,24 @@ class DatabaseSeeder extends Seeder
                 'judul_lowongan' => 'Backend Developer',
                 'email' => 'hr@tokopedia.com',
                 'tanggal_akhir' => '2022-09-30',
-                'deskripsi_pekerjaan' => 'Melakukan penggunaaan teknologi stack dengan ReactJS Microservices dengan Springboot serta PostgresSQL DBMengembangkan aplikasi backend menggunakan Java Spring Boot 2.5 or latest'
+                'deskripsi_pekerjaan' => 'Melakukan penggunaaan teknologi stack dengan ReactJS Microservices dengan Springboot serta PostgresSQL DBMengembangkan aplikasi backend menggunakan Java Spring Boot 2.5 or latest',
+                'salary' => '20000000'
             ],
             [
                 'mitras_id' => '2',
                 'judul_lowongan' => 'Marketing Communication',
                 'email' => 'hr@kompasgramedia.com',
                 'tanggal_akhir' => '2022-12-24',
-                'deskripsi_pekerjaan' => '"Meningkatkan Brand Awareness produk Kompas TV melalui kerja sama dengan pihak internal dan eksternal. Mengelola perencanaan dan kerja sama barter pada media luar ruang. Melakukan kerja sama promo barter dan semi barter produk untuk mendukung kebutuhan Kompas TV"'
+                'deskripsi_pekerjaan' => '"Meningkatkan Brand Awareness produk Kompas TV melalui kerja sama dengan pihak internal dan eksternal. Mengelola perencanaan dan kerja sama barter pada media luar ruang. Melakukan kerja sama promo barter dan semi barter produk untuk mendukung kebutuhan Kompas TV"',
+                'salary' => '20000000'
             ],
             [
                 'mitras_id' => '3',
                 'judul_lowongan' => 'Brand & Graphic Designer',
                 'email' => 'info@artmosphere-design.com',
                 'tanggal_akhir' => '2022-10-30',
-                'deskripsi_pekerjaan' => 'Membuat dan mendesain berbagai material untuk agunan cetak dan digital. Pastikan proyek diselesaikan dengan kualitas tinggi dan sesuai jadwal. Mengkonseptualisasikan dan mengembangkan konsep desain, grafik, dan tata letak'
+                'deskripsi_pekerjaan' => 'Membuat dan mendesain berbagai material untuk agunan cetak dan digital. Pastikan proyek diselesaikan dengan kualitas tinggi dan sesuai jadwal. Mengkonseptualisasikan dan mengembangkan konsep desain, grafik, dan tata letak',
+                'salary' => '20000000'
             ]
         ];
 

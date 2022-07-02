@@ -32,6 +32,7 @@ class LowonganController extends Controller
         $update = [
             'mitras_id' => $request->mitras_id,
             'judul_lowongan' => $request->judul_lowongan,
+            'salary' => $request->salary,
             'email' => $request->email,
             'tanggal_akhir' => $request->tanggal_akhir,
             'deskripsi_pekerjaan' => $request->deskripsi_pekerjaan
@@ -94,10 +95,11 @@ class LowonganController extends Controller
     {
         $data = $request->validate([
             'mitras_id' => 'required',
+            'salary' => 'required',
             'judul_lowongan' => 'required|max:50',
             'email' => 'required|email:dns',
             'tanggal_akhir' => 'required',
-            'deskripsi_pekerjaan' => 'required|min:10|max:255'
+            'deskripsi_pekerjaan' => 'required|min:10'
         ]);
 
 

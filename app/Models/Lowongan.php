@@ -12,6 +12,13 @@ class Lowongan extends Model
     // protected $fillable = ['judul_lowongan','deskripsi_pekerjaan','tanggal_akhir','email'];
     protected $guarded = [];
 
+    public function scopeFilter($query)
+    {
+        if (request('search')) {
+            return $query->where('judul_lowongan', 'like', '%' . request('search') . '%');
+        }
+    }
+
     public function Lowongan_keahlians()
     {
         return $this->hasMany(Lowongan_keahlian::class);

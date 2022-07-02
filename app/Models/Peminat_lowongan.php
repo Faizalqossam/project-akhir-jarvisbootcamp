@@ -8,9 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Peminat_lowongan extends Model
 {
     use HasFactory;
-    protected $fillable = ['nama','kontak','alamat'];
+    protected $guarded = [];
 
-    public function Lowongans(){
+    public function Lowongans()
+    {
         return $this->belongsTo(Lowongan::class);
     }
 }

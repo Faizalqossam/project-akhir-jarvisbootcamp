@@ -29,16 +29,29 @@
                         <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="/">Temukan
                             Pekerjaan</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link {{ Request::is('category-job') ? 'active' : '' }}"
-                            href="/category-job">Kategori Pekerjaan</a>
-                    </li>
                 </ul>
                 <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link {{ Request::is('login') ? 'active' : '' }}" href="/login">Login</a>
-                    </li>
+                    @auth
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Selamat Datang,
+                                {{ auth()->user()->name }}</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li>
+                                    <form action="/logout" method="post">
+                                        @csrf
+                                        <button type="submit" class="dropdown-item">Logout</button>
+                                    </form>
+                                </li>
+                            </ul>
+                        </li>
+                    @else
+                        <li class="nav-item">
+                            <a class="nav-link {{ Request::is('login') ? 'active' : '' }}" href="/login">Login</a>
+                        </li>
+                    @endauth
                 </ul>
+
             </div>
         </div>
     </nav>

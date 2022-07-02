@@ -11,6 +11,41 @@ use RealRashid\SweetAlert\Facades\Alert;
 
 class LowonganController extends Controller
 {
+    public function index()
+    {
+        return view('admin.list', [
+            'title' => "Halaman List Lowongan",
+            'lowongans' => Lowongan::all()
+        ]);
+    }
+
+    public  function editLowongan($id)
+    {
+        return view('admin.edit', [
+            'title' => 'Edit Lowongan',
+            'mitras' => Mitra::latest()->first(),
+            'lowongans' => Lowongan::find($id)
+        ]);
+    }
+    public function updateLowongan($id, Request $request)
+    {
+        $update = [
+            'mitras_id' => $request->mitras_id,
+            'judul_lowongan' => $request->judul_lowongan,
+            'email' => $request->email,
+            'tanggal_akhir' => $request->tanggal_akhir,
+            'deskripsi_pekerjaan' => $request->deskripsi_pekerjaan
+        ];
+        Lowongan::find($id)->update($update);
+        Alert::success('Sukses', 'Update Lowongan Sukses');
+        return redirect()->route('dashboard.list');
+    }
+
+    public function destroyLowongan($id)
+    {
+        Lowongan::destroy($id);
+        return redirect()->route('dashboard.list');
+    }
     public function createMitra()
     {
         $bidang = Bidang_usaha::all();
@@ -46,6 +81,9 @@ class LowonganController extends Controller
 
         //get latest id from Mitra model
         $mitra = Mitra::latest()->first();
+
+        // return dd($mitra);
+
         return view('admin.form.lowongan', [
             'title' => "Form Input Lowongan",
             'mitras' => $mitra

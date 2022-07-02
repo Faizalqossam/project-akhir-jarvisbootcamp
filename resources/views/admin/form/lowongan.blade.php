@@ -14,10 +14,8 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="mitras_id">ID Mitra</label>
-                                @foreach ($mitras as $mitra)
-                                    <input type="text" name="mitras_id" id="mitras_id" class="form-control"
-                                        value="{{ $mitra->id }}" placeholder="{{ $mitra->nama }}" disabled>
-                                @endforeach
+                                <input type="text" name="mitras_id" id="mitras_id" class="form-control"
+                                    value="{{ $mitras->id }}" readonly>
                             </div>
                             <div class="form-group">
                                 <label for="loker">Nama Pekerjaan</label>

@@ -13,7 +13,7 @@
                         <div class="d-grid form-floating mb-3">
                             <input type="text" name="nama" class="form-control @error('nama') is-invalid @enderror"
                                 id="nama" placeholder="Nama Lengkap" required value="{{ old('nama') }}" autofocus>
-                            <label for="nama">Nama Lengkap</label>
+                            <label for="nama">Nama Lengkap *</label>
                             @error('nama')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -23,7 +23,7 @@
                         <div class="d-grid form-floating mb-3">
                             <input type="text" name="kontak" class="form-control @error('kontak') is-invalid @enderror"
                                 id="kontak" placeholder="08xxxx" required>
-                            <label for="kontak">No Telp</label>
+                            <label for="kontak">No Telp *</label>
                             @error('kontak')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -33,7 +33,7 @@
                         <div class="d-grid form-floating mb-3">
                             <input type="text" name="alamat" class="form-control @error('alamat') is-invalid @enderror"
                                 id="alamat" placeholder="08xxxx" required>
-                            <label for="alamat">Alamat</label>
+                            <label for="alamat">Alamat *</label>
                             @error('alamat')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -49,8 +49,18 @@
                                 @endforeach
 
                             </select>
-                            <label for="role">Pilih Lowongan Yang Akan Diambil</label>
+                            <label for="role">Pilih Lowongan Yang Akan Diambil *</label>
 
+                        </div>
+                        <div class="mb-3">
+                            <label for="cv-form" class="form-label">Upload CV anda disini *</label>
+                            <input class="form-control form-control-lg @error('cv') is-invalid @enderror" type="file"
+                                id="cv-form" name="cv">
+                            @error('cv')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
                         <div class="d-grid">
                             <button class="btn btn-primary btn-login text-uppercase fw-bold" type="submit">Submit</button>

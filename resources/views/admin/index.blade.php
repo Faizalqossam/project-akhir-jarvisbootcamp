@@ -46,6 +46,8 @@
                                 <td>{{ $peminat->alamat }}</td>
                                 <td>{{ $peminat->lowongans->judul_lowongan }}</td>
                                 <td>
+                                    <a href="storage/{{ $peminat->cv }}"><span class="badge bg-success">Lihat
+                                            CV</span></a>
                                     <a href="/dashboard/delete/{{ $peminat->id }}"
                                         onclick="return confirm('Apakah anda ingin menghapus pelamar ini?')"><span
                                             class="badge bg-danger">Delete</span></a>

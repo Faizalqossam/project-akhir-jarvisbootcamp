@@ -35,8 +35,13 @@ class JobsController extends Controller
             'nama' => 'required|max:32',
             'kontak' => 'required|max:13',
             'alamat' => 'required|max:50',
+            'cv' => 'required|file|mimes:pdf',
             'lowongans_id' => 'required'
         ]);
+
+        if ($request->file('cv')) {
+            $validatedData['cv'] = $request->file('cv')->store('file-cv');
+        }
 
         Peminat_lowongan::create($validatedData);
         Alert::success('Sukses', 'Silahkan tunggu informasi selanjutnya untuk pemanggilan');
